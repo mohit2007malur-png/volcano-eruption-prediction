@@ -1,0 +1,10 @@
+model,split,rmse_std,r2
+K-means,train,1.197,-0.434
+K-means,dev,1.145,-0.5
+K-means,test,1.353,-0.702
+Random Forest,train,0.559,0.687
+Random Forest,dev,0.727,0.395
+Random Forest,test,0.755,0.469
+Neural Network,train,0.823,0.323
+Neural Network,dev,0.802,0.263
+Neural Network,test,0.88,0.28

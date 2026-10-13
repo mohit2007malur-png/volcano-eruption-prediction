@@ -1,0 +1,390 @@
+{
+  "environment": {
+    "run_at": "2026-10-13 06:43",
+    "colab": true,
+    "python": "3.13.16",
+    "sklearn": "1.9.1",
+    "torch": "2.11.0+cpu",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3"
+  },
+  "settings": {
+    "features": [
+      "longitude",
+      "latitude",
+      "depth",
+      "magnitude",
+      "eq_rate_1d",
+      "eq_rate_7d",
+      "eq_rate_30d"
+    ],
+    "drop_feature": null,
+    "run_nn": true,
+    "seed": 42
+  },
+  "dataset": {
+    "n_raw": 6485,
+    "n_rift": 3764,
+    "n_erupting": 844,
+    "erupting_fraction": 0.22422954303931988,
+    "n_train": 2634,
+    "n_dev": 753,
+    "n_test": 377,
+    "days_per_std_unit": 13.377454282672472
+  },
+  "classification": {
+    "Naive baseline": {
+      "test": {
+        "kappa": 0.0,
+        "auroc": 0.5,
+        "accuracy": 0.7771883289124668,
+        "recall": 0.0,
+        "precision": 0.0,
+        "confusion": [
+          [
+            293,
+            0
+          ],
+          [
+            84,
+            0
+          ]
+        ]
+      }
+    },
+    "Logistic Regression": {
+      "train": {
+        "kappa": 0.38128129588640514,
+        "auroc": 0.7443153254106092,
+        "accuracy": 0.8276385725132878,
+        "recall": 0.3350253807106599,
+        "precision": 0.7644787644787645,
+        "confusion": [
+          [
+            1982,
+            61
+          ],
+          [
+            393,
+            198
+          ]
+        ]
+      },
+      "dev": {
+        "kappa": 0.28719072566004455,
+        "auroc": 0.6914261976169247,
+        "accuracy": 0.8061088977423638,
+        "recall": 0.2603550295857988,
+        "precision": 0.676923076923077,
+        "confusion": [
+          [
+            563,
+            21
+          ],
+          [
+            125,
+            44
+          ]
+        ]
+      },
+      "test": {
+        "kappa": 0.20176355498378484,
+        "auroc": 0.6822688119616448,
+        "accuracy": 0.7904509283819628,
+        "recall": 0.19047619047619047,
+        "precision": 0.5925925925925926,
+        "confusion": [
+          [
+            282,
+            11
+          ],
+          [
+            68,
+            16
+          ]
+        ]
+      }
+    },
+    "K-means": {
+      "train": {
+        "kappa": 0.2152393721021172,
+        "auroc": 0.7268175843725386,
+        "accuracy": 0.6233864844343204,
+        "recall": 0.6937394247038917,
+        "precision": 0.3357903357903358,
+        "confusion": [
+          [
+            1232,
+            811
+          ],
+          [
+            181,
+            410
+          ]
+        ]
+      },
+      "dev": {
+        "kappa": 0.16814833060886314,
+        "auroc": 0.6913046121423361,
+        "accuracy": 0.6069057104913679,
+        "recall": 0.6272189349112426,
+        "precision": 0.31268436578171094,
+        "confusion": [
+          [
+            351,
+            233
+          ],
+          [
+            63,
+            106
+          ]
+        ]
+      },
+      "test": {
+        "kappa": 0.1318770226537217,
+        "auroc": 0.6393629124004551,
+        "accuracy": 0.6074270557029178,
+        "recall": 0.5476190476190477,
+        "precision": 0.2948717948717949,
+        "confusion": [
+          [
+            183,
+            110
+          ],
+          [
+            38,
+            46
+          ]
+        ]
+      }
+    },
+    "Random Forest": {
+      "train": {
+        "kappa": 0.81089890445762,
+        "auroc": 0.9937361946575033,
+        "accuracy": 0.9403948367501899,
+        "recall": 0.7343485617597293,
+        "precision": 1.0,
+        "confusion": [
+          [
+            2043,
+            0
+          ],
+          [
+            157,
+            434
+          ]
+        ]
+      },
+      "dev": {
+        "kappa": 0.44978564084657313,
+        "auroc": 0.8265684526221934,
+        "accuracy": 0.849933598937583,
+        "recall": 0.3609467455621302,
+        "precision": 0.9242424242424242,
+        "confusion": [
+          [
+            579,
+            5
+          ],
+          [
+            108,
+            61
+          ]
+        ]
+      },
+      "test": {
+        "kappa": 0.3651255358236374,
+        "auroc": 0.8295546887697058,
+        "accuracy": 0.8249336870026526,
+        "recall": 0.32142857142857145,
+        "precision": 0.75,
+        "confusion": [
+          [
+            284,
+            9
+          ],
+          [
+            57,
+            27
+          ]
+        ]
+      }
+    },
+    "Neural Network": {
+      "train": {
+        "kappa": 0.45568831467639825,
+        "auroc": 0.8504264903558268,
+        "accuracy": 0.8526955201214882,
+        "recall": 0.3587140439932318,
+        "precision": 0.9592760180995475,
+        "confusion": [
+          [
+            2034,
+            9
+          ],
+          [
+            379,
+            212
+          ]
+        ]
+      },
+      "dev": {
+        "kappa": 0.34735986347480796,
+        "auroc": 0.7644686714760477,
+        "accuracy": 0.8286852589641435,
+        "recall": 0.27218934911242604,
+        "precision": 0.8846153846153846,
+        "confusion": [
+          [
+            578,
+            6
+          ],
+          [
+            123,
+            46
+          ]
+        ]
+      },
+      "test": {
+        "kappa": 0.2125882020886254,
+        "auroc": 0.6946611409068747,
+        "accuracy": 0.8037135278514589,
+        "recall": 0.16666666666666666,
+        "precision": 0.7777777777777778,
+        "confusion": [
+          [
+            289,
+            4
+          ],
+          [
+            70,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  "regression": {
+    "K-means": {
+      "train": {
+        "rmse": 1.1973805568634641,
+        "r2": -0.43372019795465966
+      },
+      "dev": {
+        "rmse": 1.144659193221911,
+        "r2": -0.5000295102745282
+      },
+      "test": {
+        "rmse": 1.3528386445446194,
+        "r2": -0.7023384453993182
+      }
+    },
+    "Random Forest": {
+      "train": {
+        "rmse": 0.5592514547424257,
+        "r2": 0.6872378103684806
+      },
+      "dev": {
+        "rmse": 0.7267481321085058,
+        "r2": 0.39533441617024745
+      },
+      "test": {
+        "rmse": 0.7554463464341779,
+        "r2": 0.4691630363203606
+      }
+    },
+    "Neural Network": {
+      "train": {
+        "rmse": 0.8229309999400348,
+        "r2": 0.3227845693376944
+      },
+      "dev": {
+        "rmse": 0.8022945443490037,
+        "r2": 0.2630889313817989
+      },
+      "test": {
+        "rmse": 0.8800544186691763,
+        "r2": 0.27960123150060257
+      }
+    }
+  },
+  "hyperparameters": {
+    "kmeans": {
+      "k_classification": 8,
+      "k_regression": 10
+    },
+    "rf_classification": {
+      "best_depth": 13,
+      "best_trees": 200,
+      "max_features": 3
+    },
+    "rf_regression": {
+      "best_depth": 13,
+      "best_trees": 100,
+      "max_features": 3
+    },
+    "nn_classification": {
+      "lr": 0.01,
+      "weight_decay": 0.0001,
+      "best_epoch": 52,
+      "epochs": 60,
+      "n_params": 3012001
+    },
+    "nn_regression": {
+      "lr": 0.01,
+      "weight_decay": 0.001,
+      "best_epoch": 28,
+      "epochs": 60,
+      "n_params": 3012001
+    }
+  },
+  "rf_regression_importance": {
+    "longitude": 0.08750130424897393,
+    "latitude": 0.09541570125868225,
+    "depth": 0.09027211710358413,
+    "magnitude": 0.06860456741541593,
+    "eq_rate_1d": 0.09223050112729135,
+    "eq_rate_7d": 0.15545003122329593,
+    "eq_rate_30d": 0.41052577762275644
+  },
+  "leakage_check": {
+    "random_folds": {
+      "auroc": 0.8332777272779908,
+      "kappa": 0.4634752230062781,
+      "r2": 0.38852896502659273
+    },
+    "month_grouped_folds": {
+      "auroc": 0.5830123853458029,
+      "kappa": 0.034603460074782474,
+      "r2": -0.1698966370547465
+    }
+  },
+  "seed_stability": {
+    "n_splits": 20,
+    "kappa": {
+      "mean": 0.470232961551717,
+      "std": 0.0643790581134832,
+      "min": 0.365654587006203,
+      "max": 0.5962657726870606
+    },
+    "auroc": {
+      "mean": 0.8301702421582968,
+      "std": 0.024803355145207113,
+      "min": 0.7955468876970584,
+      "max": 0.8735982447586543
+    }
+  },
+  "figures": {
+    "01_earthquake_map": "rift-zone filter: kept vs removed quakes, coloured by depth, Pu'u 'O'o vent",
+    "02_timeline": "weekly earthquake count vs eruption episodes",
+    "03_rates_repose_vs_erupting": "1/7/30-day earthquake rates during repose vs eruption",
+    "04_kmeans_elbow": "k-means elbow plots (inertia vs k), chosen k marked",
+    "05_rf_depth_tuning": "random forest train vs dev AUROC by max_depth, chosen depth marked",
+    "06_nn_loss_curves": "neural network train vs dev loss per epoch (classification)",
+    "07_roc_curves": "test-set ROC curves, all classification models",
+    "08_confusion_matrices": "test-set confusion matrices",
+    "09_rf_importance_and_fit": "random forest feature importance + predicted vs actual days to eruption",
+    "10_leakage_random_vs_grouped": "random forest 5-fold CV: random vs month-grouped folds"
+  }
+}
